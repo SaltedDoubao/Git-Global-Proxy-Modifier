@@ -39,11 +39,6 @@ Git-Global-Proxy-Modifier/
 2. 程序会以管理员权限启动并自动监听IP变化
 3. 可以在系统托盘找到程序图标
 
-### 构建可执行文件
-1. 确保已安装PowerShell 5.0+
-2. 右键 `build/build.ps1` 选择"使用PowerShell运行"
-3. 构建完成后，可以在 `dist` 目录找到可执行文件
-
 ## 💻 系统要求
 
 - Windows 7/8/10/11
