@@ -8,12 +8,14 @@ $form.Size = New-Object System.Drawing.Size(400, 300)
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = "FixedSingle"
 $form.MaximizeBox = $false
-$form.Icon = [System.Drawing.SystemIcons]::Application
+#$form.Icon = [System.Drawing.SystemIcons]::Application
+$form.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon("$PSScriptRoot/../res/icon.ico")
 $form.ShowInTaskbar = $true
 
 # 创建系统托盘图标
 $notifyIcon = New-Object System.Windows.Forms.NotifyIcon
-$notifyIcon.Icon = [System.Drawing.SystemIcons]::Application
+#$notifyIcon.Icon = [System.Drawing.SystemIcons]::Application
+$notifyIcon.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon("$PSScriptRoot/../res/icon.ico")
 $notifyIcon.Text = "Git 代理 IP 监视器"
 $notifyIcon.Visible = $true
 
