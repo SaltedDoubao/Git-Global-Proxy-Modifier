@@ -51,12 +51,6 @@ Git-Global-Proxy-Modifier/
 - Git命令行工具
 - 管理员权限（用于监听网络事件）
 
-## 🔒 安全说明
-
-- 程序需要管理员权限才能监听网络变化
-- 修改的是全局Git配置
-- 配置文件以明文存储在config目录
-
 ## 🏛️ 许可协议
 
 本项目采用 [MIT License](https://opensource.org/licenses/MIT) 开源许可证。
