@@ -1,9 +1,9 @@
-ï»¿Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-# åˆ›å»ºä¸»çª—å£
+# ´´½¨Ö÷´°¿Ú
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "Git ä»£ç† IP ç›‘è§†å™¨"
+$form.Text = "Git ´úÀí IP ¼àÊÓÆ÷"
 $form.Size = New-Object System.Drawing.Size(400, 300)
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = "FixedSingle"
@@ -11,48 +11,48 @@ $form.MaximizeBox = $false
 $form.Icon = [System.Drawing.SystemIcons]::Application
 $form.ShowInTaskbar = $true
 
-# åˆ›å»ºç³»ç»Ÿæ‰˜ç›˜å›¾æ ‡
+# ´´½¨ÏµÍ³ÍĞÅÌÍ¼±ê
 $notifyIcon = New-Object System.Windows.Forms.NotifyIcon
 $notifyIcon.Icon = [System.Drawing.SystemIcons]::Application
-$notifyIcon.Text = "Git ä»£ç† IP ç›‘è§†å™¨"
+$notifyIcon.Text = "Git ´úÀí IP ¼àÊÓÆ÷"
 $notifyIcon.Visible = $true
 
-# åˆ›å»ºæ‰˜ç›˜å›¾æ ‡å³é”®èœå•
+# ´´½¨ÍĞÅÌÍ¼±êÓÒ¼ü²Ëµ¥
 $contextMenu = New-Object System.Windows.Forms.ContextMenuStrip
 $showMenuItem = New-Object System.Windows.Forms.ToolStripMenuItem
-$showMenuItem.Text = "æ˜¾ç¤ºçª—å£"
+$showMenuItem.Text = "ÏÔÊ¾´°¿Ú"
 $exitMenuItem = New-Object System.Windows.Forms.ToolStripMenuItem
-$exitMenuItem.Text = "é€€å‡º"
+$exitMenuItem.Text = "ÍË³ö"
 $contextMenu.Items.Add($showMenuItem)
 $contextMenu.Items.Add($exitMenuItem)
 $notifyIcon.ContextMenuStrip = $contextMenu
 
-# åˆ›å»ºçŠ¶æ€æ˜¾ç¤ºå™¨
+# ´´½¨×´Ì¬ÏÔÊ¾Æ÷
 $statusLabel = New-Object System.Windows.Forms.Label
 $statusLabel.Location = New-Object System.Drawing.Point(10, 10)
 $statusLabel.Size = New-Object System.Drawing.Size(380, 20)
-$statusLabel.Text = "ç­‰å¾…æ£€æµ‹ IP åœ°å€å˜åŒ–..."
+$statusLabel.Text = "µÈ´ı¼ì²â IP µØÖ·±ä»¯..."
 $form.Controls.Add($statusLabel)
 
-# åˆ›å»ºå½“å‰IPæ˜¾ç¤ºå™¨
+# ´´½¨µ±Ç°IPÏÔÊ¾Æ÷
 $currentIPLabel = New-Object System.Windows.Forms.Label
 $currentIPLabel.Location = New-Object System.Drawing.Point(10, 40)
 $currentIPLabel.Size = New-Object System.Drawing.Size(380, 20)
-$currentIPLabel.Text = "å½“å‰ IP: æœªçŸ¥"
+$currentIPLabel.Text = "µ±Ç° IP: Î´Öª"
 $form.Controls.Add($currentIPLabel)
 
-# åˆ›å»ºç½‘ç»œé€‚é…å™¨æ˜¾ç¤ºå™¨
+# ´´½¨ÍøÂçÊÊÅäÆ÷ÏÔÊ¾Æ÷
 $adapterLabel = New-Object System.Windows.Forms.Label
 $adapterLabel.Location = New-Object System.Drawing.Point(10, 60)
 $adapterLabel.Size = New-Object System.Drawing.Size(380, 20)
-$adapterLabel.Text = "ç½‘ç»œé€‚é…å™¨: æœªçŸ¥"
+$adapterLabel.Text = "ÍøÂçÊÊÅäÆ÷: Î´Öª"
 $form.Controls.Add($adapterLabel)
 
-# åˆ›å»ºç«¯å£è¾“å…¥æ¡†
+# ´´½¨¶Ë¿ÚÊäÈë¿ò
 $portLabel = New-Object System.Windows.Forms.Label
 $portLabel.Location = New-Object System.Drawing.Point(10, 90)
 $portLabel.Size = New-Object System.Drawing.Size(80, 20)
-$portLabel.Text = "ä»£ç†ç«¯å£:"
+$portLabel.Text = "´úÀí¶Ë¿Ú:"
 $form.Controls.Add($portLabel)
 
 $portTextBox = New-Object System.Windows.Forms.TextBox
@@ -60,14 +60,14 @@ $portTextBox.Location = New-Object System.Drawing.Point(90, 90)
 $portTextBox.Size = New-Object System.Drawing.Size(100, 20)
 $form.Controls.Add($portTextBox)
 
-# åˆ›å»ºä¿å­˜ç«¯å£æŒ‰é’®
+# ´´½¨±£´æ¶Ë¿Ú°´Å¥
 $savePortButton = New-Object System.Windows.Forms.Button
 $savePortButton.Location = New-Object System.Drawing.Point(200, 90)
 $savePortButton.Size = New-Object System.Drawing.Size(80, 20)
-$savePortButton.Text = "ä¿å­˜ç«¯å£"
+$savePortButton.Text = "±£´æ¶Ë¿Ú"
 $form.Controls.Add($savePortButton)
 
-# åˆ›å»ºæ—¥å¿—æ–‡æœ¬æ¡†
+# ´´½¨ÈÕÖ¾ÎÄ±¾¿ò
 $logTextBox = New-Object System.Windows.Forms.TextBox
 $logTextBox.Location = New-Object System.Drawing.Point(10, 120)
 $logTextBox.Size = New-Object System.Drawing.Size(370, 100)
@@ -76,48 +76,48 @@ $logTextBox.ReadOnly = $true
 $logTextBox.ScrollBars = "Vertical"
 $form.Controls.Add($logTextBox)
 
-# åˆ›å»ºå¼€å§‹/åœæ­¢æŒ‰é’®
+# ´´½¨¿ªÊ¼/Í£Ö¹°´Å¥
 $startStopButton = New-Object System.Windows.Forms.Button
 $startStopButton.Location = New-Object System.Drawing.Point(10, 230)
 $startStopButton.Size = New-Object System.Drawing.Size(180, 30)
-$startStopButton.Text = "å¼€å§‹ç›‘æ§"
+$startStopButton.Text = "¿ªÊ¼¼à¿Ø"
 $form.Controls.Add($startStopButton)
 
-# åˆ›å»ºé€€å‡ºæŒ‰é’®
+# ´´½¨ÍË³ö°´Å¥
 $exitButton = New-Object System.Windows.Forms.Button
 $exitButton.Location = New-Object System.Drawing.Point(200, 230)
 $exitButton.Size = New-Object System.Drawing.Size(180, 30)
-$exitButton.Text = "é€€å‡º"
+$exitButton.Text = "ÍË³ö"
 $form.Controls.Add($exitButton)
 
-# å…¨å±€å˜é‡
+# È«¾Ö±äÁ¿
 $global:isMonitoring = $false
 $global:lastIP = ""
 $global:eventJob = $null
 $global:currentPort = "7890"
 
-# è‡ªå®šä¹‰æ—¥å¿—å‡½æ•°
+# ×Ô¶¨ÒåÈÕÖ¾º¯Êı
 function Add-Log {
     param ([string]$message)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $logMessage = "[$timestamp] $message"
     $logTextBox.AppendText("$logMessage`r`n")
-    # æ»šåŠ¨åˆ°åº•éƒ¨
+    # ¹ö¶¯µ½µ×²¿
     $logTextBox.SelectionStart = $logTextBox.Text.Length
     $logTextBox.ScrollToCaret()
 }
 
-# è·å–è„šæœ¬æ‰€åœ¨ç›®å½•
+# »ñÈ¡½Å±¾ËùÔÚÄ¿Â¼
 $scriptPath = $PSScriptRoot
 if (-not $scriptPath) {
     $scriptPath = Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
 }
-# è®¾ç½®é…ç½®æ–‡ä»¶è·¯å¾„
+# ÉèÖÃÅäÖÃÎÄ¼şÂ·¾¶
 $configPath = Join-Path -Path $scriptPath -ChildPath "..\config"
 $portFilePath = Join-Path -Path $configPath -ChildPath "proxy_port.txt"
 $ipFilePath = Join-Path -Path $configPath -ChildPath "last_ip.txt"
 
-# åˆå§‹åŒ–ç«¯å£
+# ³õÊ¼»¯¶Ë¿Ú
 function Initialize-Port {
     if (Test-Path $portFilePath) {
         try {
@@ -128,36 +128,36 @@ function Initialize-Port {
         catch {
             $portTextBox.Text = "7890"
             $global:currentPort = "7890"
-            Add-Log "æ— æ³•è¯»å–ç«¯å£æ–‡ä»¶ï¼Œä½¿ç”¨é»˜è®¤ç«¯å£7890"
+            Add-Log "ÎŞ·¨¶ÁÈ¡¶Ë¿ÚÎÄ¼ş£¬Ê¹ÓÃÄ¬ÈÏ¶Ë¿Ú7890"
         }
     }
     else {
         $portTextBox.Text = "7890"
         $global:currentPort = "7890"
-        # åˆ›å»ºé»˜è®¤é…ç½®ç›®å½•å’Œæ–‡ä»¶
+        # ´´½¨Ä¬ÈÏÅäÖÃÄ¿Â¼ºÍÎÄ¼ş
         if (-not (Test-Path $configPath)) {
             New-Item -ItemType Directory -Path $configPath -Force | Out-Null
         }
         $global:currentPort | Out-File $portFilePath -NoNewline
-        Add-Log "å·²åˆ›å»ºé»˜è®¤é…ç½®æ–‡ä»¶"
+        Add-Log "ÒÑ´´½¨Ä¬ÈÏÅäÖÃÎÄ¼ş"
     }
 }
 
-# æ£€æµ‹å½“å‰IPå¹¶æ˜¾ç¤º
+# ¼ì²âµ±Ç°IP²¢ÏÔÊ¾
 function Get-CurrentIP {
-    # è·å–å…è®¸å¤–éƒ¨è¿æ¥çš„IPv4åœ°å€
-    # ä¼˜å…ˆè·å–æ‹¥æœ‰é»˜è®¤ç½‘å…³çš„æ¥å£ï¼Œé€šå¸¸æ˜¯ä¸»è¦ç½‘ç»œè¿æ¥
+    # »ñÈ¡ÔÊĞíÍâ²¿Á¬½ÓµÄIPv4µØÖ·
+    # ÓÅÏÈ»ñÈ¡ÓµÓĞÄ¬ÈÏÍø¹ØµÄ½Ó¿Ú£¬Í¨³£ÊÇÖ÷ÒªÍøÂçÁ¬½Ó
     $defaultRouteInterface = Get-NetRoute -DestinationPrefix "0.0.0.0/0" | 
                              Select-Object -ExpandProperty InterfaceIndex -First 1
     
     if ($defaultRouteInterface) {
-        # ä½¿ç”¨é»˜è®¤è·¯ç”±çš„æ¥å£è·å–IP
+        # Ê¹ÓÃÄ¬ÈÏÂ·ÓÉµÄ½Ó¿Ú»ñÈ¡IP
         $ip = (Get-NetIPAddress -InterfaceIndex $defaultRouteInterface -AddressFamily IPv4).IPAddress
         $adapterName = (Get-NetAdapter -InterfaceIndex $defaultRouteInterface | Select-Object -ExpandProperty Name)
-        $adapterLabel.Text = "ç½‘ç»œé€‚é…å™¨: $adapterName (é»˜è®¤è·¯ç”±)"
-        Add-Log "æ‰¾åˆ°é»˜è®¤è·¯ç”±æ¥å£: $adapterName"
+        $adapterLabel.Text = "ÍøÂçÊÊÅäÆ÷: $adapterName (Ä¬ÈÏÂ·ÓÉ)"
+        Add-Log "ÕÒµ½Ä¬ÈÏÂ·ÓÉ½Ó¿Ú: $adapterName"
     } else {
-        # å¤‡é€‰æ–¹æ¡ˆ: å°è¯•è·å–æœ‰çº¿è¿æ¥çš„é€‚é…å™¨
+        # ±¸Ñ¡·½°¸: ³¢ÊÔ»ñÈ¡ÓĞÏßÁ¬½ÓµÄÊÊÅäÆ÷
         $connectedAdapter = Get-NetAdapter | Where-Object {
             $_.Status -eq 'Up' -and 
             $_.PhysicalMediaType -ne 'Unspecified' -and
@@ -168,10 +168,10 @@ function Get-CurrentIP {
         if ($connectedAdapter) {
             $ip = (Get-NetIPAddress -InterfaceIndex $connectedAdapter.ifIndex -AddressFamily IPv4).IPAddress
             $adapterName = $connectedAdapter.Name
-            $adapterLabel.Text = "ç½‘ç»œé€‚é…å™¨: $adapterName (æœ‰çº¿)"
-            Add-Log "æ‰¾åˆ°æœ‰çº¿ç½‘ç»œé€‚é…å™¨: $adapterName"
+            $adapterLabel.Text = "ÍøÂçÊÊÅäÆ÷: $adapterName (ÓĞÏß)"
+            Add-Log "ÕÒµ½ÓĞÏßÍøÂçÊÊÅäÆ÷: $adapterName"
         } else {
-            # ç¬¬ä¸‰ä¸ªé€‰é¡¹ï¼šè·å–æ— çº¿ç½‘å¡
+            # µÚÈı¸öÑ¡Ïî£º»ñÈ¡ÎŞÏßÍø¿¨
             $wirelessAdapter = Get-NetAdapter | Where-Object {
                 $_.Status -eq 'Up' -and 
                 $_.PhysicalMediaType -match 'Wireless'
@@ -180,10 +180,10 @@ function Get-CurrentIP {
             if ($wirelessAdapter) {
                 $ip = (Get-NetIPAddress -InterfaceIndex $wirelessAdapter.ifIndex -AddressFamily IPv4).IPAddress
                 $adapterName = $wirelessAdapter.Name
-                $adapterLabel.Text = "ç½‘ç»œé€‚é…å™¨: $adapterName (æ— çº¿)"
-                Add-Log "æ‰¾åˆ°æ— çº¿ç½‘ç»œé€‚é…å™¨: $adapterName"
+                $adapterLabel.Text = "ÍøÂçÊÊÅäÆ÷: $adapterName (ÎŞÏß)"
+                Add-Log "ÕÒµ½ÎŞÏßÍøÂçÊÊÅäÆ÷: $adapterName"
             } else {
-                # æœ€åæ–¹æ¡ˆï¼šä½¿ç”¨ä¹‹å‰çš„è¿‡æ»¤æ–¹æ³•
+                # ×îºó·½°¸£ºÊ¹ÓÃÖ®Ç°µÄ¹ıÂË·½·¨
                 $ip = (Get-NetIPAddress | Where-Object {
                     $_.AddressFamily -eq 'IPv4' -and 
                     $_.InterfaceAlias -notmatch 'Loopback' -and 
@@ -195,92 +195,92 @@ function Get-CurrentIP {
                 }).IPAddress | Select-Object -First 1
                 
                 if ($ip) {
-                    $adapterLabel.Text = "ç½‘ç»œé€‚é…å™¨: æœªçŸ¥ (å¤–éƒ¨IP)"
-                    Add-Log "æ‰¾åˆ°å¤–éƒ¨IPåœ°å€"
+                    $adapterLabel.Text = "ÍøÂçÊÊÅäÆ÷: Î´Öª (Íâ²¿IP)"
+                    Add-Log "ÕÒµ½Íâ²¿IPµØÖ·"
                 } else {
-                    # å¦‚æœå¤–éƒ¨IPæ²¡æ‰¾åˆ°ï¼Œå°±å›åˆ°å°è¯•å¯»æ‰¾åˆé€‚çš„å†…ç½‘IP
+                    # Èç¹ûÍâ²¿IPÃ»ÕÒµ½£¬¾Í»Øµ½³¢ÊÔÑ°ÕÒºÏÊÊµÄÄÚÍøIP
                     $ip = (Get-NetIPAddress | Where-Object {
                         $_.AddressFamily -eq 'IPv4' -and 
                         $_.InterfaceAlias -notmatch 'Loopback' -and 
                         $_.IPAddress -notmatch '^169\.254\.' -and
                         $_.IPAddress -notmatch '^0\.'
                     }).IPAddress | Select-Object -First 1
-                    $adapterLabel.Text = "ç½‘ç»œé€‚é…å™¨: æœªçŸ¥ (å†…éƒ¨IP)"
-                    Add-Log "ä½¿ç”¨å¤‡é€‰æ–¹æ¡ˆæ‰¾åˆ°IPåœ°å€"
+                    $adapterLabel.Text = "ÍøÂçÊÊÅäÆ÷: Î´Öª (ÄÚ²¿IP)"
+                    Add-Log "Ê¹ÓÃ±¸Ñ¡·½°¸ÕÒµ½IPµØÖ·"
                 }
             }
         }
     }
 
     if ($ip) {
-        $currentIPLabel.Text = "å½“å‰ IP: $ip"
-        Add-Log "ç¡®å®šå½“å‰çš„IPåœ°å€ä¸º: $ip"
+        $currentIPLabel.Text = "µ±Ç° IP: $ip"
+        Add-Log "È·¶¨µ±Ç°µÄIPµØÖ·Îª: $ip"
         return $ip
     }
     else {
-        $currentIPLabel.Text = "å½“å‰ IP: æœªçŸ¥"
-        $adapterLabel.Text = "ç½‘ç»œé€‚é…å™¨: æœªæ‰¾åˆ°"
-        Add-Log "æ— æ³•ç¡®å®šæœ‰æ•ˆçš„ç½‘ç»œIPåœ°å€"
+        $currentIPLabel.Text = "µ±Ç° IP: Î´Öª"
+        $adapterLabel.Text = "ÍøÂçÊÊÅäÆ÷: Î´ÕÒµ½"
+        Add-Log "ÎŞ·¨È·¶¨ÓĞĞ§µÄÍøÂçIPµØÖ·"
         return $null
     }
 }
 
-# æ›´æ–°Gitä»£ç†è®¾ç½®
+# ¸üĞÂGit´úÀíÉèÖÃ
 function Update-GitProxy {
     param ([string]$ip)
     
     if (-not $ip) {
-        Add-Log "IPåœ°å€ä¸ºç©ºï¼Œæ— æ³•æ›´æ–°Gitä»£ç†"
+        Add-Log "IPµØÖ·Îª¿Õ£¬ÎŞ·¨¸üĞÂGit´úÀí"
         return
     }
     
     try {
         git config --global http.proxy "http://${ip}:${global:currentPort}"
         git config --global https.proxy "http://${ip}:${global:currentPort}"
-        Add-Log "Gitä»£ç†å·²æ›´æ–°ä¸º: http://${ip}:${global:currentPort}"
+        Add-Log "Git´úÀíÒÑ¸üĞÂÎª: http://${ip}:${global:currentPort}"
         
-        # ä¿å­˜ä¸Šæ¬¡IP
+        # ±£´æÉÏ´ÎIP
         $ip | Out-File "last_ip.txt" -NoNewline
         $global:lastIP = $ip
     }
     catch {
-        Add-Log "æ›´æ–°Gitä»£ç†å¤±è´¥: $_"
+        Add-Log "¸üĞÂGit´úÀíÊ§°Ü: $_"
     }
 }
 
-# å¼€å§‹ç›‘æ§åŠŸèƒ½
+# ¿ªÊ¼¼à¿Ø¹¦ÄÜ
 function Start-Monitoring {
     if ($global:isMonitoring) {
-        Add-Log "å·²ç»åœ¨ç›‘æ§ä¸­..."
+        Add-Log "ÒÑ¾­ÔÚ¼à¿ØÖĞ..."
         return
     }
     
     $global:isMonitoring = $true
-    $startStopButton.Text = "åœæ­¢ç›‘æ§"
-    $statusLabel.Text = "æ­£åœ¨ç›‘æ§ IP åœ°å€å˜åŒ–..."
-    Add-Log "å¼€å§‹ç›‘æ§ IP åœ°å€å˜åŒ–"
+    $startStopButton.Text = "Í£Ö¹¼à¿Ø"
+    $statusLabel.Text = "ÕıÔÚ¼à¿Ø IP µØÖ·±ä»¯..."
+    Add-Log "¿ªÊ¼¼à¿Ø IP µØÖ·±ä»¯"
     
-    # è·å–ä¸Šæ¬¡ä¿å­˜çš„IP
+    # »ñÈ¡ÉÏ´Î±£´æµÄIP
     if (Test-Path "last_ip.txt") {
         $global:lastIP = Get-Content "last_ip.txt" -Raw
         $global:lastIP = $global:lastIP.Trim()
-        Add-Log "åŠ è½½ä¸Šæ¬¡IP: $global:lastIP"
+        Add-Log "¼ÓÔØÉÏ´ÎIP: $global:lastIP"
     }
     
-    # è·å–å½“å‰IPå¹¶æ¯”è¾ƒ
+    # »ñÈ¡µ±Ç°IP²¢±È½Ï
     $currentIP = Get-CurrentIP
     if ($currentIP -ne $global:lastIP) {
-        Add-Log "IPå·²å˜åŒ–: ä» $global:lastIP å˜ä¸º $currentIP"
+        Add-Log "IPÒÑ±ä»¯: ´Ó $global:lastIP ±äÎª $currentIP"
         Update-GitProxy $currentIP
     }
     
-    # æ³¨å†Œç½‘ç»œå˜åŒ–äº‹ä»¶
+    # ×¢²áÍøÂç±ä»¯ÊÂ¼ş
     $NetworkChangeEvent = {
-        # ç­‰å¾…1ç§’ç¡®ä¿ç½‘ç»œçŠ¶æ€å·²ç¨³å®š
+        # µÈ´ı1ÃëÈ·±£ÍøÂç×´Ì¬ÒÑÎÈ¶¨
         Start-Sleep -Seconds 1
         
-        # å¤ç”¨Get-CurrentIPå‡½æ•°çš„é€»è¾‘ï¼Œä½†ä½¿ç”¨UIæ›´æ–°æ“ä½œ
-        # é€šè¿‡é»˜è®¤è·¯ç”±å¯»æ‰¾æ­£ç¡®çš„æ¥å£
+        # ¸´ÓÃGet-CurrentIPº¯ÊıµÄÂß¼­£¬µ«Ê¹ÓÃUI¸üĞÂ²Ù×÷
+        # Í¨¹ıÄ¬ÈÏÂ·ÓÉÑ°ÕÒÕıÈ·µÄ½Ó¿Ú
         $defaultRouteInterface = Get-NetRoute -DestinationPrefix "0.0.0.0/0" | 
                                 Select-Object -ExpandProperty InterfaceIndex -First 1
         
@@ -288,7 +288,7 @@ function Start-Monitoring {
             $ip = (Get-NetIPAddress -InterfaceIndex $defaultRouteInterface -AddressFamily IPv4).IPAddress
             $adapterName = (Get-NetAdapter -InterfaceIndex $defaultRouteInterface).Name
         } else {
-            # æŸ¥æ‰¾æœ‰çº¿é€‚é…å™¨
+            # ²éÕÒÓĞÏßÊÊÅäÆ÷
             $connectedAdapter = Get-NetAdapter | Where-Object {
                 $_.Status -eq 'Up' -and 
                 $_.PhysicalMediaType -ne 'Unspecified' -and
@@ -300,7 +300,7 @@ function Start-Monitoring {
                 $ip = (Get-NetIPAddress -InterfaceIndex $connectedAdapter.ifIndex -AddressFamily IPv4).IPAddress
                 $adapterName = $connectedAdapter.Name
             } else {
-                # æŸ¥æ‰¾æ— çº¿é€‚é…å™¨
+                # ²éÕÒÎŞÏßÊÊÅäÆ÷
                 $wirelessAdapter = Get-NetAdapter | Where-Object {
                     $_.Status -eq 'Up' -and 
                     $_.PhysicalMediaType -match 'Wireless'
@@ -310,62 +310,62 @@ function Start-Monitoring {
                     $ip = (Get-NetIPAddress -InterfaceIndex $wirelessAdapter.ifIndex -AddressFamily IPv4).IPAddress
                     $adapterName = $wirelessAdapter.Name
                 } else {
-                    # æœ€åå¤‡é€‰æ–¹æ¡ˆ
+                    # ×îºó±¸Ñ¡·½°¸
                     $ip = (Get-NetIPAddress | Where-Object {
                         $_.AddressFamily -eq 'IPv4' -and 
                         $_.InterfaceAlias -notmatch 'Loopback' -and 
                         $_.IPAddress -notmatch '^169\.254\.' -and
                         $_.IPAddress -notmatch '^0\.'
                     }).IPAddress | Select-Object -First 1
-                    $adapterName = "æœªçŸ¥é€‚é…å™¨"
+                    $adapterName = "Î´ÖªÊÊÅäÆ÷"
                 }
             }
         }
         
         if ($ip -and $ip -ne $global:lastIP) {
             $form.Invoke([Action]{
-                $currentIPLabel.Text = "å½“å‰ IP: $ip"
+                $currentIPLabel.Text = "µ±Ç° IP: $ip"
                 
-                # æ›´æ–°é€‚é…å™¨æ ‡ç­¾
+                # ¸üĞÂÊÊÅäÆ÷±êÇ©
                 $adapterDescription = ""
                 if ($defaultRouteInterface) {
-                    $adapterDescription = "(é»˜è®¤è·¯ç”±)"
+                    $adapterDescription = "(Ä¬ÈÏÂ·ÓÉ)"
                 } elseif ($connectedAdapter) {
-                    $adapterDescription = "(æœ‰çº¿)"
+                    $adapterDescription = "(ÓĞÏß)"
                 } elseif ($wirelessAdapter) {
-                    $adapterDescription = "(æ— çº¿)"
+                    $adapterDescription = "(ÎŞÏß)"
                 }
                 
-                $adapterLabel.Text = "ç½‘ç»œé€‚é…å™¨: $adapterName $adapterDescription"
-                Add-Log "IPå·²å˜åŒ–: ä» $global:lastIP å˜ä¸º $ip (é€‚é…å™¨: $adapterName $adapterDescription)"
+                $adapterLabel.Text = "ÍøÂçÊÊÅäÆ÷: $adapterName $adapterDescription"
+                Add-Log "IPÒÑ±ä»¯: ´Ó $global:lastIP ±äÎª $ip (ÊÊÅäÆ÷: $adapterName $adapterDescription)"
                 Update-GitProxy $ip
             })
         }
     }
     
-    # æ³¨å†Œäº‹ä»¶
+    # ×¢²áÊÂ¼ş
     $global:eventJob = Register-CimIndicationEvent -ClassName Win32_NetworkAdapter -EventName __InstanceModificationEvent -Action $NetworkChangeEvent -SourceIdentifier "NetworkChangeEvent"
 }
 
-# åœæ­¢ç›‘æ§åŠŸèƒ½
+# Í£Ö¹¼à¿Ø¹¦ÄÜ
 function Stop-Monitoring {
     if (-not $global:isMonitoring) {
         return
     }
     
     $global:isMonitoring = $false
-    $startStopButton.Text = "å¼€å§‹ç›‘æ§"
-    $statusLabel.Text = "ç›‘æ§å·²åœæ­¢"
-    Add-Log "åœæ­¢ç›‘æ§ IP åœ°å€å˜åŒ–"
+    $startStopButton.Text = "¿ªÊ¼¼à¿Ø"
+    $statusLabel.Text = "¼à¿ØÒÑÍ£Ö¹"
+    Add-Log "Í£Ö¹¼à¿Ø IP µØÖ·±ä»¯"
     
-    # æ³¨é”€äº‹ä»¶
+    # ×¢ÏúÊÂ¼ş
     if ($global:eventJob) {
         Unregister-Event -SourceIdentifier "NetworkChangeEvent" -ErrorAction SilentlyContinue
         $global:eventJob = $null
     }
 }
 
-# äº‹ä»¶å¤„ç†å‡½æ•°
+# ÊÂ¼ş´¦Àíº¯Êı
 $showMenuItem.Add_Click({
     $form.WindowState = [System.Windows.Forms.FormWindowState]::Normal
     $form.ShowInTaskbar = $true
@@ -400,7 +400,7 @@ $form.Add_Resize({
 })
 
 $form.Add_Closing({
-    $stopConfirm = [System.Windows.Forms.MessageBox]::Show("ç¡®è®¤é€€å‡ºGitä»£ç†IPç›‘è§†å™¨ï¼Ÿ", "ç¡®è®¤", [System.Windows.Forms.MessageBoxButtons]::YesNo)
+    $stopConfirm = [System.Windows.Forms.MessageBox]::Show("È·ÈÏÍË³öGit´úÀíIP¼àÊÓÆ÷£¿", "È·ÈÏ", [System.Windows.Forms.MessageBoxButtons]::YesNo)
     if ($stopConfirm -eq "No") {
         $_.Cancel = $true
     }
@@ -426,16 +426,16 @@ $exitButton.Add_Click({
 $savePortButton.Add_Click({
     $newPort = $portTextBox.Text.Trim()
     if (-not $newPort) {
-        [System.Windows.Forms.MessageBox]::Show("ç«¯å£ä¸èƒ½ä¸ºç©ºï¼", "é”™è¯¯", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+        [System.Windows.Forms.MessageBox]::Show("¶Ë¿Ú²»ÄÜÎª¿Õ£¡", "´íÎó", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
         return
     }
     
     try {
         $newPort | Out-File "proxy_port.txt" -NoNewline
         $global:currentPort = $newPort
-        Add-Log "ä»£ç†ç«¯å£å·²æ›´æ–°ä¸º: $newPort"
+        Add-Log "´úÀí¶Ë¿ÚÒÑ¸üĞÂÎª: $newPort"
         
-        # å¦‚æœæ­£åœ¨ç›‘æ§ï¼Œä½¿ç”¨æ–°ç«¯å£æ›´æ–°Gitä»£ç†
+        # Èç¹ûÕıÔÚ¼à¿Ø£¬Ê¹ÓÃĞÂ¶Ë¿Ú¸üĞÂGit´úÀí
         if ($global:isMonitoring) {
             $currentIP = Get-CurrentIP
             if ($currentIP) {
@@ -444,16 +444,16 @@ $savePortButton.Add_Click({
         }
     }
     catch {
-        Add-Log "è®¾ç½®ç«¯å£å¤±è´¥: $_"
+        Add-Log "ÉèÖÃ¶Ë¿ÚÊ§°Ü: $_"
     }
 })
 
-# åˆå§‹åŒ–
+# ³õÊ¼»¯
 Initialize-Port
 Get-CurrentIP
 
-# å¼€å§‹è‡ªåŠ¨ç›‘æ§
+# ¿ªÊ¼×Ô¶¯¼à¿Ø
 Start-Monitoring
 
-# æ˜¾ç¤ºçª—å£
+# ÏÔÊ¾´°¿Ú
 [System.Windows.Forms.Application]::Run($form)
