@@ -9,13 +9,10 @@
 - 自动检测IP地址变化并更新Git代理
 - 智能识别物理网卡和优先连接
 - 图形界面显示状态和设置
-- 系统托盘支持，最小化时不打扰
-- 开机启动选项
 - 可自定义代理端口
+- 开机启动选项（目前还没实现，需手动添加）
 
 ## 📁 项目结构
-
-
 
 ```
 Git-Global-Proxy-Modifier/
@@ -25,9 +22,6 @@ Git-Global-Proxy-Modifier/
 │   └── icon.ico        # 程序图标(可选)
 ├── config/             # 配置文件
 │   └── proxy_port.txt  # 代理端口设置
-├── build/              # 构建脚本
-│   └── build.ps1       # 打包脚本
-├── dist/               # 构建输出目录
 ├── start_ip_monitor.bat  # 启动脚本
 └── README.md           # 项目说明
 ```
