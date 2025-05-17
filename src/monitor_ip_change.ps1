@@ -402,13 +402,23 @@ $form.Add_Resize({
 })
 
 $form.Add_Closing({
-    $stopConfirm = [System.Windows.Forms.MessageBox]::Show("确认退出Git代理IP监视器？", "确认", [System.Windows.Forms.MessageBoxButtons]::YesNo)
-    if ($stopConfirm -eq "No") {
-        $_.Cancel = $true
-    }
-    else {
+    # 检查是否为系统关机事件
+    # 使用CloseReason属性来判断是否为系统关机
+    if ($_.CloseReason -eq [System.Windows.Forms.CloseReason]::WindowsShutDown -or 
+        $_.CloseReason -eq [System.Windows.Forms.CloseReason]::TaskManagerClosing) {
+        # 系统关机时直接关闭，不显示确认对话框
         Stop-Monitoring
         $notifyIcon.Visible = $false
+    } else {
+        # 正常关闭程序时显示确认对话框
+        $stopConfirm = [System.Windows.Forms.MessageBox]::Show("确认退出Git代理IP监视器？", "确认", [System.Windows.Forms.MessageBoxButtons]::YesNo)
+        if ($stopConfirm -eq "No") {
+            $_.Cancel = $true
+        }
+        else {
+            Stop-Monitoring
+            $notifyIcon.Visible = $false
+        }
     }
 })
 
