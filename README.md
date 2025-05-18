@@ -19,7 +19,7 @@ Git-Global-Proxy-Modifier/
 ├── src/                # 源代码
 │   └── monitor_ip_change.ps1  # 主程序
 ├── res/                # 资源文件
-│   └── icon.ico        # 程序图标(可选)
+│   └── icon.ico        # 程序图标
 ├── config/             # 配置文件
 │   └── proxy_port.txt  # 代理端口设置
 ├── start_ip_monitor.bat  # 启动脚本
